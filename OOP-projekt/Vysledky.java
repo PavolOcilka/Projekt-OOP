@@ -1,3 +1,4 @@
+import javax.swing.JOptionPane;
 import java.util.ArrayList;
 import java.util.Comparator;
 
@@ -36,16 +37,19 @@ public class Vysledky {
         if (premier == null) {
             premier = vitaznaStrana.getKandidati().stream()
                     .filter(kandidat -> !kandidat.equals(prezident)) // Vylúčenie prezidenta
-                    .skip(1) // Preskočenie prvýho, ktorý bol zvolený prezidentom
+                    .skip(1) // Preskočenie prvého, ktorý bol zvolený prezidentom
                     .findFirst() // Výber druhého
                     .orElse(null);
         }
     }
 
-    public void vypisVysledky() {
-
+    public void vypisVysledky(ArrayList<Strana> strany) {
+        // Pred výpisom výsledkov pre každú stranu aktualizujeme počet hlasov
+        for (Strana strana : strany) {
+            strana.spocitajHlasy();
+        }
+    
         StringBuilder sb = new StringBuilder();
-
         sb.append("Do parlamentu sa dostali strany:\n");
         for (Strana strana : parlament) {
             sb.append(strana.getNazov()).append("\n");
@@ -53,17 +57,32 @@ public class Vysledky {
         sb.append("\n");
         sb.append("Strana s najvyssim poctom hlasov: ").append(vitaznaStrana.getNazov()).append(" - ")
                 .append(vitaznaStrana.getPocetHlasov()).append(" hlasov\n");
-
-        sb.append("Prezidentom sa stal/a: ").append(prezident != null ?
-                prezident.getMeno() + " " + prezident.getPriezvisko() + " zo strany " + prezident.getStrana().getNazov() +
-                        ", ktory/a ziskal/a " + prezident.getPocetHlasov() + " hlasov\n" :
-                "Žiadny kandidát zo strany v parlamente sa nestal prezidentom.\n");
-
-        sb.append("Premierom sa stal/a: ").append(premier != null ?
-                premier.getMeno() + " " + premier.getPriezvisko() + " zo strany " + premier.getStrana().getNazov() +
-                        ", ktory/a ziskal/a " + premier.getPocetHlasov() + " hlasov\n" :
-                "Žiadny kandidát zo strany v parlamente sa nestal premiérom.\n");
-
-        System.out.println(sb.toString());
-    }
+        sb.append("Prezidentom sa ");
+        if (prezident != null) {
+            if (prezident.getPohlavie().equals("muz")) {
+                sb.append("stal: ").append(prezident.getMeno()).append(" ").append(prezident.getPriezvisko())
+                    .append(", ktory ziskal ").append(prezident.getPocetHlasov()).append(" hlasov.\n");
+            } else {
+                sb.append("stala: ").append(prezident.getMeno()).append(" ").append(prezident.getPriezvisko())
+                    .append(", ktora ziskala ").append(prezident.getPocetHlasov()).append(" hlasov.\n");
+            }
+        } else {
+            sb.append("Ziadny kandidát zo strany v parlamente sa nestal prezidentom.\n");
+        }
+        sb.append("Premierom sa ");
+        if (premier != null) {
+            if (premier.getPohlavie().equals("muz")) {
+                sb.append("stal: ").append(premier.getMeno()).append(" ").append(premier.getPriezvisko())
+                    .append(", ktory ziskal ").append(premier.getPocetHlasov()).append(" hlasov.\n");
+            } else {
+                sb.append("stala: ").append(premier.getMeno()).append(" ").append(premier.getPriezvisko())
+                    .append(", ktora ziskala ").append(premier.getPocetHlasov()).append(" hlasov.\n");
+            }
+        } else {
+            sb.append("Ziadny kandidat zo strany v parlamente sa nestal premierom.\n");
+        }
+    
+        // Zobrazenie výsledkov pomocou JOptionPane
+        JOptionPane.showMessageDialog(null, sb.toString(), "Vysledky volieb", JOptionPane.PLAIN_MESSAGE);
+    }    
 }

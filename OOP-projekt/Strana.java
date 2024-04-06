@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
 public class Strana {
-    private String nazov;
-    private int pocetHlasov;
-    private int pocetKandidatov;
-    private ArrayList<Kandidat> kandidati;
+    protected String nazov;
+    protected int pocetHlasov;
+    protected int pocetKandidatov;
+    protected ArrayList<Kandidat> kandidati;
 
     public Strana(String nazov) {
         this.nazov = nazov;
@@ -13,7 +13,7 @@ public class Strana {
         this.kandidati = new ArrayList<>();
     }
 
-    public void pridajKandidata(Kandidat kandidat) { //Pridanie kandidáta do strany
+    public void pridajKandidata(Kandidat kandidat) {
         this.kandidati.add(kandidat);
         this.pocetKandidatov++;
     }
@@ -37,11 +37,14 @@ public class Strana {
     public ArrayList<Kandidat> getKandidati() {
         return kandidati;
     }
-    
-    public void spocitajHlasy() { //Získame počet hlasov strany na základe počtu hlasov kandidátov
-        this.pocetHlasov = 0; // Resetujeme počet hlasov
-        for (Kandidat kandidat : kandidati) {
-            this.pocetHlasov += kandidat.getPocetHlasov();
+
+    public void spocitajHlasy() {
+        // Vynulovanie počtu hlasov len ak je to potrebné
+        if (this.pocetHlasov == 0) {
+            for (Kandidat kandidat : kandidati) {
+                this.pocetHlasov += kandidat.getPocetHlasov();
+            }
         }
     }
+    
 }

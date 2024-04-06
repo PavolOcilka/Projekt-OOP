@@ -12,7 +12,7 @@ public class GrafickeRozhranie extends JFrame {
     public GrafickeRozhranie(ArrayList<Strana> strany) {
         this.strany = strany;
         zoraditStrany(); // Zoradenie strán podľa počtu hlasov pri vytvorení inštancie
-        initializeUI(); //Vytvorenie používateľského rozhrania
+        initializeUI(); // Vytvorenie používateľského rozhrania
     }
 
     private void initializeUI() {
@@ -59,7 +59,7 @@ public class GrafickeRozhranie extends JFrame {
         strany.sort(comparator.reversed());
     }
 
-    private void generujHlasy(ArrayList<Strana> strany) { //Vygenerovanie hlasov pre strany
+    private void generujHlasy(ArrayList<Strana> strany) {
         Hlasy hlasyGenerator = new Hlasy();
         hlasyGenerator.generujHlasy(strany);
     }
@@ -70,15 +70,10 @@ public class GrafickeRozhranie extends JFrame {
             strana.getKandidati().sort(Comparator.comparingInt(Kandidat::getPocetHlasov).reversed());
         }
     
-        // Zoradenie strán podľa počtu kandidátov
+        // Zoradenie strán podľa počtu hlasov
         zoraditStrany();
     
-        // Určenie a výpis výsledkov volieb
-        Vysledky vysledky = new Vysledky();
-        vysledky.urciVysledky(strany);
-        vysledky.vypisVysledky();
-    
-        // Výpis výsledkov volieb do súboru "Vysledky.txt"
+        // Zápis výsledkov volieb do súboru "Vysledky.txt"
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Vysledky.txt"))) {
             for (Strana strana : strany) {
                 writer.write(strana.getNazov() + " (" + strana.getPocetHlasov() + " hlasov)\n");
@@ -93,8 +88,14 @@ public class GrafickeRozhranie extends JFrame {
             ex.printStackTrace(); // Vypíše podrobnú chybovú správu do konzoly
             JOptionPane.showMessageDialog(this, "Chyba pri zápise do súboru: " + ex.getMessage(), "Chyba", JOptionPane.ERROR_MESSAGE);
         }
-    }
     
+        // Určenie a výpis výsledkov volieb
+        Vysledky vysledky = new Vysledky();
+        vysledky.urciVysledky(strany);
+    
+        // Výpis výsledkov pomocou JOptionPane
+        vysledky.vypisVysledky(strany);
+    }    
 
     private void zobrazitKandidatnuListinu(ArrayList<Strana> strany) {
         StringBuilder sb = new StringBuilder();
@@ -103,7 +104,7 @@ public class GrafickeRozhranie extends JFrame {
         ArrayList<Strana> aktualneStrany = KandidatnaListina.nacitatKandidatnuListinu("Kandidatna_listina.txt");
 
         for (Strana strana : aktualneStrany) {
-            sb.append(strana.getNazov()).append(":\n"); // Názov strany s bodkou
+            sb.append(strana.getNazov()).append(":\n"); // Názov strany s dvojbodkou
             for (Kandidat kandidat : strana.getKandidati()) {
                 sb.append(kandidat.getMeno()).append(" ").append(kandidat.getPriezvisko()).append("\n");
             }

@@ -1,15 +1,17 @@
 public class Kandidat {
     private String meno;
-    private String prezvisko;
+    private String priezvisko;
     private int pocetHlasov;
     private Strana strana;
 
-    public Kandidat(String meno, String prezvisko, Strana strana) {
+    public Kandidat(String meno, String priezvisko, Strana strana) {
         this.meno = meno;
-        this.prezvisko = prezvisko;
+        this.priezvisko = priezvisko;
         this.strana = strana;
         this.pocetHlasov = 0; // Počiatočný počet hlasov je 0
     }
+
+    // Getters a setters
 
     public void pridajHlas() {
         this.pocetHlasov++;
@@ -25,10 +27,19 @@ public class Kandidat {
     }
 
     public String getPriezvisko() {
-        return prezvisko;
+        return priezvisko;
     }
-    
+
     public Strana getStrana() {
         return strana;
+    }
+
+    // Metóda pre získanie pohlavia kandidáta
+    public String getPohlavie() {
+        if (meno.endsWith("a") || priezvisko.endsWith("a")) {
+            return "zena";
+        } else {
+            return "muz";
+        }
     }
 }
