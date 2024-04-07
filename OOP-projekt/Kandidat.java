@@ -36,7 +36,7 @@ public class Kandidat {
 
     // Metóda pre získanie pohlavia kandidáta
     public String getPohlavie() {
-        if (meno.endsWith("a") || priezvisko.endsWith("a")) {
+        if (meno.endsWith("a")) {
             return "zena";
         } else {
             return "muz";

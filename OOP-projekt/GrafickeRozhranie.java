@@ -1,16 +1,15 @@
 import javax.swing.*;
 import java.awt.*;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 
 public class GrafickeRozhranie extends JFrame {
     private ArrayList<Strana> strany;
+    private Simulacia simulacia;
 
     public GrafickeRozhranie(ArrayList<Strana> strany) {
         this.strany = strany;
+        this.simulacia = new Simulacia();
         zoraditStrany(); // Zoradenie strán podľa počtu hlasov pri vytvorení inštancie
         initializeUI(); // Vytvorenie používateľského rozhrania
     }
@@ -33,7 +32,7 @@ public class GrafickeRozhranie extends JFrame {
         vygenerujButton.addActionListener(e -> generujHlasy(strany));
 
         JButton spustitButton = new JButton("Spusti program");
-        spustitButton.addActionListener(e -> spustitProgram());
+        spustitButton.addActionListener(e -> simulacia.spustitProgram(strany));
 
         JButton zobrazitButton = new JButton("Zobrazit kandidatnu listinu");
         zobrazitButton.addActionListener(e -> zobrazitKandidatnuListinu(strany));
@@ -63,39 +62,6 @@ public class GrafickeRozhranie extends JFrame {
         Hlasy hlasyGenerator = new Hlasy();
         hlasyGenerator.generujHlasy(strany);
     }
-
-    private void spustitProgram() {
-        // Zoradenie kandidátov v rámci strán
-        for (Strana strana : strany) {
-            strana.getKandidati().sort(Comparator.comparingInt(Kandidat::getPocetHlasov).reversed());
-        }
-    
-        // Zoradenie strán podľa počtu hlasov
-        zoraditStrany();
-    
-        // Zápis výsledkov volieb do súboru "Vysledky.txt"
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("Vysledky.txt"))) {
-            for (Strana strana : strany) {
-                writer.write(strana.getNazov() + " (" + strana.getPocetHlasov() + " hlasov)\n");
-                ArrayList<Kandidat> kandidati = strana.getKandidati();
-                for (Kandidat kandidat : kandidati) {
-                    writer.write("  " + kandidat.getMeno() + " " + kandidat.getPriezvisko() +
-                            " - " + kandidat.getPocetHlasov() + " hlasov\n");
-                }
-                writer.write("\n");
-            }
-        } catch (IOException ex) {
-            ex.printStackTrace(); // Vypíše podrobnú chybovú správu do konzoly
-            JOptionPane.showMessageDialog(this, "Chyba pri zápise do súboru: " + ex.getMessage(), "Chyba", JOptionPane.ERROR_MESSAGE);
-        }
-    
-        // Určenie a výpis výsledkov volieb
-        Vysledky vysledky = new Vysledky();
-        vysledky.urciVysledky(strany);
-    
-        // Výpis výsledkov pomocou JOptionPane
-        vysledky.vypisVysledky(strany);
-    }    
 
     private void zobrazitKandidatnuListinu(ArrayList<Strana> strany) {
         StringBuilder sb = new StringBuilder();
