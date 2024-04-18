@@ -1,10 +1,8 @@
 import javax.swing.*;
-
-import io.KandidatnaListina;
-import model.Strana;
-import ui.GrafickeRozhranie;
-
 import java.util.ArrayList;
+import io.KandidatnaListina;
+import model.*;
+import ui.*;
 
 public class Main {
     public static void main(String[] args) {
