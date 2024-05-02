@@ -6,6 +6,7 @@ import io.KandidatnaListina;
 import model.Kandidat;
 import model.Strana;
 import volebne.Simulacia;
+import strategy.*;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -14,10 +15,12 @@ import java.util.Comparator;
 public class GrafickeRozhranie extends JFrame {
     private ArrayList<Strana> strany;
     private Simulacia simulacia;
+    private PredvolebnaKampan predvolebnaKampan;
 
     public GrafickeRozhranie(ArrayList<Strana> strany) {
         this.strany = strany;
         this.simulacia = new Simulacia();
+        this.predvolebnaKampan = new PredvolebnaKampan();
         zoraditStrany(); // Zoradenie strán podľa počtu hlasov pri vytvorení inštancie
         initializeUI(); // Vytvorenie používateľského rozhrania
     }
@@ -45,12 +48,16 @@ public class GrafickeRozhranie extends JFrame {
         JButton zobrazitButton = new JButton("Zobrazit kandidatnu listinu");
         zobrazitButton.addActionListener(e -> zobrazitKandidatnuListinu(strany));
 
+        JButton kampanButton = new JButton("Spustit predvolebnu kampan");
+        kampanButton.addActionListener(e -> predvolebnaKampan.spustitKampan(strany));
+
         hGroup.addGroup(layout.createParallelGroup()
                 .addComponent(vygenerujButton)
                 .addComponent(spustitButton));
         hGroup.addGroup(layout.createParallelGroup()
-                .addComponent(zobrazitButton));
-        vGroup.addComponent(vygenerujButton).addComponent(spustitButton).addComponent(zobrazitButton);
+                .addComponent(zobrazitButton)
+                .addComponent(kampanButton));
+        vGroup.addComponent(vygenerujButton).addComponent(spustitButton).addComponent(zobrazitButton).addComponent(kampanButton);
 
         layout.setHorizontalGroup(hGroup);
         layout.setVerticalGroup(vGroup);

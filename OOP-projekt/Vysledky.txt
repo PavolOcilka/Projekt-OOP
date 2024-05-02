@@ -1,89 +1,90 @@
-NS (9755 hlasov)
-  Jana Gerocova - 1748 hlasov
-  Andrej Geroc - 1740 hlasov
-  Lujza Siva - 1738 hlasov
-  Adam Daniel - 1291 hlasov
-  Peter Janko - 1039 hlasov
-  Juraj Kovac - 972 hlasov
-  Viktor Lapaj - 707 hlasov
-  Daniel Stastny - 520 hlasov
+Spravodlivost (4139 hlasov)
+  Lenka Stastna - 868 hlasov
+  Ondrej Novotny - 766 hlasov
+  Anna Mala - 739 hlasov
+  Juraj Hlavaty - 665 hlasov
+  Jozef Furaj - 584 hlasov
+  Petra Velka - 245 hlasov
+  Marek Mudry - 165 hlasov
+  Tatiana Vajnerova - 90 hlasov
+  Jan Novotny - 17 hlasov
 
-Sloboda (8693 hlasov)
-  Maria Svobodova - 1394 hlasov
-  Peter Novak - 1326 hlasov
-  Lukas Hruska - 1157 hlasov
-  Jakub Svoboda - 932 hlasov
-  Michal Prochadzka - 911 hlasov
-  Pavol Pospisil - 900 hlasov
-  Martin Cerny - 765 hlasov
-  Ondrej Horak - 750 hlasov
-  Zuzana Dvorakova - 558 hlasov
+Domovina (3924 hlasov)
+  Andrea Lucanska - 930 hlasov
+  Stefan Nizny - 796 hlasov
+  Lubomir Pesek - 619 hlasov
+  Fedor Blaho - 566 hlasov
+  Adrian Novak - 490 hlasov
+  Gabriela Mytna - 477 hlasov
+  Adriana Filanova - 46 hlasov
 
-NB (7927 hlasov)
-  Viktoria Horakova - 1730 hlasov
-  Tibor Blasko - 1616 hlasov
-  Elena Culejova - 1423 hlasov
-  Juraj Silny - 1285 hlasov
-  Marian Belko - 979 hlasov
-  Richard Kocaj - 894 hlasov
+Svetlo (3867 hlasov)
+  Lucia Svetla - 937 hlasov
+  Bohus Murarik - 816 hlasov
+  Radovan Sivy - 774 hlasov
+  Svetlana Merava - 677 hlasov
+  Samuel Rado - 663 hlasov
 
-Spravodlivost (7755 hlasov)
-  Ondrej Novotny - 1444 hlasov
-  Anna Mala - 1354 hlasov
-  Marek Mudry - 1196 hlasov
-  Juraj Hlavaty - 1027 hlasov
-  Lenka Stastna - 1016 hlasov
-  Jozef Furaj - 792 hlasov
-  Tatiana Vajnerova - 377 hlasov
-  Jan Novotny - 323 hlasov
-  Petra Velka - 226 hlasov
+Sloboda (3213 hlasov)
+  Pavol Pospisil - 910 hlasov
+  Peter Novak - 588 hlasov
+  Ondrej Horak - 563 hlasov
+  Lukas Hruska - 419 hlasov
+  Martin Cerny - 313 hlasov
+  Zuzana Dvorakova - 157 hlasov
+  Maria Svobodova - 109 hlasov
+  Michal Prochadzka - 87 hlasov
+  Jakub Svoboda - 67 hlasov
 
-Nadej (7160 hlasov)
-  Marian Blasko - 1728 hlasov
-  Maria Pekna - 1462 hlasov
-  Peter Divoky - 1076 hlasov
-  Benjamin Sasek - 931 hlasov
-  Anna Mudra - 908 hlasov
-  Tobias Lavko - 879 hlasov
-  Lukas Molnar - 176 hlasov
+Horizont (3045 hlasov)
+  Adela Gajdosova - 992 hlasov
+  Pavol Blaha - 713 hlasov
+  Filip Gajdos - 645 hlasov
+  Jozef Sylan - 436 hlasov
+  Marek Nemec - 138 hlasov
+  Boris Mytny - 121 hlasov
 
-Svetlo (7101 hlasov)
-  Radovan Sivy - 1681 hlasov
-  Bohus Murarik - 1680 hlasov
-  Samuel Rado - 1662 hlasov
-  Lucia Svetla - 1262 hlasov
-  Svetlana Merava - 816 hlasov
+NB (2947 hlasov)
+  Tibor Blasko - 938 hlasov
+  Marian Belko - 584 hlasov
+  Richard Kocaj - 568 hlasov
+  Juraj Silny - 445 hlasov
+  Viktoria Horakova - 389 hlasov
+  Elena Culejova - 23 hlasov
 
-Domovina (6131 hlasov)
-  Adrian Novak - 1909 hlasov
-  Lubomir Pesek - 1087 hlasov
-  Fedor Blaho - 948 hlasov
-  Gabriela Mytna - 912 hlasov
-  Stefan Nizny - 650 hlasov
-  Andrea Lucanska - 472 hlasov
-  Adriana Filanova - 153 hlasov
+NS (2815 hlasov)
+  Juraj Kovac - 813 hlasov
+  Jana Gerocova - 647 hlasov
+  Andrej Geroc - 499 hlasov
+  Peter Janko - 365 hlasov
+  Adam Daniel - 346 hlasov
+  Lujza Siva - 118 hlasov
+  Daniel Stastny - 17 hlasov
+  Viktor Lapaj - 10 hlasov
 
-Vizia (5680 hlasov)
-  Samuel Sutka - 1433 hlasov
-  Eva Nova - 1362 hlasov
-  Matej Smely - 1182 hlasov
-  Kristina Sulenova - 861 hlasov
-  David Solbes - 842 hlasov
+KDS (2370 hlasov)
+  Simon Dvorny - 940 hlasov
+  Dusan Pospichal - 548 hlasov
+  Robert Hrozny - 536 hlasov
+  Adam Slaby - 133 hlasov
+  Ivan Dvorak - 118 hlasov
+  Ivana Mala - 83 hlasov
+  Jakub Ctihlavy - 7 hlasov
+  Zuzana Hlavata - 5 hlasov
 
-KDS (5505 hlasov)
-  Zuzana Hlavata - 1288 hlasov
-  Adam Slaby - 1209 hlasov
-  Ivana Mala - 1010 hlasov
-  Robert Hrozny - 658 hlasov
-  Ivan Dvorak - 653 hlasov
-  Simon Dvorny - 475 hlasov
-  Dusan Pospichal - 212 hlasov
+Nadej (2237 hlasov)
+  Maria Pekna - 805 hlasov
+  Benjamin Sasek - 635 hlasov
+  Peter Divoky - 383 hlasov
+  Lukas Molnar - 198 hlasov
+  Marian Blasko - 196 hlasov
+  Anna Mudra - 14 hlasov
+  Tobias Lavko - 6 hlasov
 
-Horizont (4026 hlasov)
-  Filip Gajdos - 937 hlasov
-  Pavol Blaha - 904 hlasov
-  Marek Nemec - 799 hlasov
-  Boris Mytny - 684 hlasov
-  Jozef Sylan - 443 hlasov
-  Adela Gajdosova - 259 hlasov
+Vizia (2016 hlasov)
+  David Solbes - 903 hlasov
+  Eva Nova - 431 hlasov
+  Samuel Sutka - 379 hlasov
+  Kristina Sulenova - 216 hlasov
+  Matej Smely - 87 hlasov
 

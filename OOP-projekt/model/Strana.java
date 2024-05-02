@@ -51,4 +51,11 @@ public class Strana {
             }
         }
     }
+
+    public void vynulujHlasy() {
+        this.pocetHlasov = 0;
+        for (Kandidat kandidat : this.kandidati) {
+            kandidat.vynulujHlasy();
+        }
+    }    
 }

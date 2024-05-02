@@ -35,6 +35,10 @@ public class Kandidat {
         return strana;
     }
 
+    public void vynulujHlasy() {
+        this.pocetHlasov = 0;
+    }    
+
     // Metóda pre získanie pohlavia kandidáta
     public String getPohlavie() {
         if (meno.endsWith("a")) {

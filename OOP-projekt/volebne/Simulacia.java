@@ -1,23 +1,44 @@
 package volebne;
+
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Comparator;
 
 import generovanie.Hlasy;
-
 import model.Kandidat;
-
 import model.Strana;
 
 public class Simulacia {
 
+    private Hlasy hlasyGenerator;
+    private Vysledky vysledky;
+
+    public Simulacia() {
+        this.hlasyGenerator = new Hlasy();
+        this.vysledky = new Vysledky();
+    }
+
     public void spustitProgram(ArrayList<Strana> strany) {
-        zoraditStrany(strany);
+        vynulujHlasy(strany);
         generujHlasy(strany);
+        zoraditStrany(strany);
         zapisVysledkyDoSuboru(strany);
         urciAVypisVysledky(strany);
+    }
+
+    private void vynulujHlasy(ArrayList<Strana> strany) {
+        for (Strana strana : strany) {
+            strana.vynulujHlasy();
+            for (Kandidat kandidat : strana.getKandidati()) {
+                kandidat.vynulujHlasy();
+            }
+        }
+    }
+
+    private void generujHlasy(ArrayList<Strana> strany) {
+        hlasyGenerator.generujHlasy(strany);
     }
 
     private void zoraditStrany(ArrayList<Strana> strany) {
@@ -27,16 +48,8 @@ public class Simulacia {
         strany.sort(comparator.reversed());
     }
 
-    private void generujHlasy(ArrayList<Strana> strany) {
-        Hlasy hlasyGenerator = new Hlasy();
-        hlasyGenerator.generujHlasy(strany);
-    }
-
     private void zapisVysledkyDoSuboru(ArrayList<Strana> strany) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Vysledky.txt"))) {
-            // Zoradenie strán podľa počtu hlasov zostupne
-            zoraditStrany(strany);
-    
             for (Strana strana : strany) {
                 writer.write(strana.getNazov() + " (" + strana.getPocetHlasov() + " hlasov)\n");
                 ArrayList<Kandidat> kandidati = strana.getKandidati();
@@ -54,7 +67,6 @@ public class Simulacia {
     }    
 
     private void urciAVypisVysledky(ArrayList<Strana> strany) {
-        Vysledky vysledky = new Vysledky();
         vysledky.urciVysledky(strany);
         vysledky.vypisVysledky(strany);
     }
